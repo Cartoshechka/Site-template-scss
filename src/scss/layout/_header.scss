@@ -1,11 +1,16 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/skin' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts/mixins' as m;
 
 .header {
   background-color: $color-gray-light;
   padding-top: 69px;
   padding-bottom: 140px;
+  @include m.respond-to('lg'){
+    padding: 30px 0;
+  }
 
-  @include header-responsive;
+  @include m.min-screen('xl'){
+    background:rgba(0,0,0,0.1) ;
+  }
 }

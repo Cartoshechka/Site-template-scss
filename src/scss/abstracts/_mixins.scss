@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use 'variables' as *;
 
 $breakpoints-map: (
@@ -13,19 +14,20 @@ $breakpoints-map: (
 
 
 @function get-breakpoint($key){
-  @if not map-has-key($breakpoints-map, $key) {
+  @if not map.has-key($breakpoints-map, $key) {
     @error "No value found for `#{$key}`. Property must be one of: #{map-keys($breakpoints-map)}.";
   }
-  @return map-get($breakpoints-map, $key);
+  @return map.get($breakpoints-map, $key);
 }
 
+// Mobile-first (max-width)
 @mixin respond-to($breakpoint) {
   $width: get-breakpoint($breakpoint);
   @media (max-width: $width) {
     @content
   }
 }
-
+// Desktop-first (min-width)
 @mixin min-screen($breakpoint){
   $width: get-breakpoint($breakpoint);
   @media (min-width: $width + 0.02px) {
