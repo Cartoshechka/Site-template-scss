@@ -9,8 +9,4 @@
   @include m.respond-to('lg'){
     padding: 30px 0;
   }
-
-  @include m.min-screen('xl'){
-    background:rgba(0,0,0,0.1) ;
-  }
 }

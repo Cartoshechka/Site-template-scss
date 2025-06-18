@@ -2,21 +2,35 @@
 @use '../abstracts/mixins' as *;
 
 .container {
-  width: min(100% - $gap-xl, $container-primary);
+  width: 100%;
+  max-width: $container-primary;
   margin-inline: auto;
-  padding-inline: calc($gap-xl / 2);
+  padding-inline: $gap-xl;
 
-  @media (max-width: $md) {
-    width: min(100% - $gap-lg, $container-primary);
+  @include respond-to(md){
+    padding-inline: $gap-lg;
+  }
+  @include respond-to(sm){
+    padding-inline: $gap;
   }
 }
 
 .container-sm {
-  width: min(100% - $gap-xl, $container-secondary);
+  width: 100%;
+  max-width: $container-secondary;
   margin-inline: auto;
-  padding-inline: calc($gap-xl / 2);
+  padding-inline: $gap-xl;
 
-  @media (max-width: $lg) {
-    width: min(100% - $gap-lg, $container-sm-md);
+  @include respond-to(lg){
+    max-width: $container-sm-md;
+    padding-inline: $gap-lg;
+  }
+
+  @include respond-to(md){
+    padding-inline: $gap;
+  }
+
+  @include respond-to(sm){
+    padding-inline: $gap-sm;
   }
 }
