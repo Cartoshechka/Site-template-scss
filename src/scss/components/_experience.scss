@@ -1,0 +1,43 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/skin' as *;
+
+.experience {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.experience__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: $gap-xl;
+}
+
+.experience__item {
+  display: flex;
+  gap: $gap;
+  align-items: center;
+  min-width: fit-content;
+}
+
+.experience__picture {
+  order: -1;
+}
+
+.experience__image {
+  display: block;
+}
+
+.experience__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 1;
+}
+
+.experience__number {
+  font-size: 1.3125rem;
+  font-weight: 500;
+}

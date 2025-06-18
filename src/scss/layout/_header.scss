@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/skin' as *;
+@use '../abstracts/mixins' as *;
+
+.header {
+  background-color: $color-gray-light;
+  padding-top: 69px;
+  padding-bottom: 140px;
+
+  @include header-responsive;
+}

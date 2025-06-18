@@ -1,0 +1,25 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/skin' as *;
+
+.navbar {
+  margin-bottom: 141px;
+}
+
+.navbar__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 27px;
+  margin-left: -0.75em;
+}
+
+.navbar__link {
+  display: block;
+  letter-spacing: $letter-spacing;
+  padding: 0.5em 0.75em;
+  text-transform: uppercase;
+}
+
+.navbar__link--active {
+  color: $color-primary;
+  font-weight: 500;
+}

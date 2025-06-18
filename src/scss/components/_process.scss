@@ -1,0 +1,7 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/skin' as *;
+
+.process {
+  background-color: $color-gray-light;
+  padding-bottom: 57px;
+}
