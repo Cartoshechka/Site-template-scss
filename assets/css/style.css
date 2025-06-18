@@ -408,6 +408,7 @@ img{
             align-items:center;
     text-align:center;
     margin:0 auto;
+    padding-inline:calc(var(--gap) * 1.5);
   }
   .section{
     padding-top:60px;
@@ -439,11 +440,15 @@ img{
 }
 
 @media (max-width: 768px){
+  .hero{
+    padding-inline:20px;
+  }
   .hero__title{
     margin-bottom:30px;
   }
   .hero__description{
     margin-bottom:40px;
+    font-size:0.95rem;
   }
   .hero__button{
     min-width:200px;
@@ -501,6 +506,7 @@ img{
     min-width:180px;
     min-height:50px;
     width:100%;
+    padding-inline:1em;
   }
   .experience{
     padding-top:50px;

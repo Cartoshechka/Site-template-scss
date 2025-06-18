@@ -12,6 +12,11 @@
     align-items: center;
     text-align: center;
     margin: 0 auto;
+    padding-inline: $gap-lg;
+  }
+
+  @include m.respond-to('md'){
+    padding-inline: $gap;
   }
 
   &__title {
@@ -33,6 +38,7 @@
 
     @include m.respond-to('md'){
       margin-bottom: 40px;
+      font-size: 0.95rem;
     }
 
     @include m.respond-to('us') {
@@ -61,6 +67,7 @@
       min-width: 180px;
       min-height: 50px;
       width: 100%;
+      padding-inline: 1em;
     }
   }
 }
