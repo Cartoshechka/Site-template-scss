@@ -1,33 +1,34 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/skin' as *;
-@use '../abstracts/mixins' as *;
+@use '../abstracts/mixins' as m;
 
 .section {
   padding-top: 100px;
   padding-bottom: 100px;
   text-align: center;
-}
 
-.section__title {
-  margin-bottom: 36px;
-}
+  @include m.respond-to('lg') {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
-.section__description {
-  color: $color-secondary;
-}
+  @include m.respond-to('md'){
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-.section-title {
-  margin-bottom: 36px;
-}
+  @include m.respond-to('us') {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
 
-.section-description {
-  margin-bottom: 57px;
-}
+  &__title {
+    margin-bottom: 36px;
+  }
 
-@mixin section-component{
-  padding: 100px 0;
+  &__description {
+    color: $color-secondary;
+    margin-bottom: 57px;
 
-  @include respond-to(xl){padding: 90px 0;}
-
-
+  }
 }

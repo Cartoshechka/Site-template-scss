@@ -1,32 +1,66 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/skin' as *;
+@use '../abstracts/mixins' as m;
 
 .hero {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   max-width: $container-secondary;
-}
 
-.hero__title {
-  margin-top: 0;
-  margin-bottom: 40px;
-}
+  @include m.respond-to('lg'){
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+  }
 
-.hero__description {
-  margin-bottom: 57px;
-  color: $color-secondary;
-}
+  &__title {
+    margin-top: 0;
+    margin-bottom: 40px;
 
-.hero__button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 225px;
-  min-height: 65px;
-  text-transform: uppercase;
-  padding: 0.5em;
-  letter-spacing: $letter-spacing;
-  background-color: $color-primary;
-  color: $color-white;
+    @include m.respond-to('md'){
+      margin-bottom: 30px;
+    }
+
+    @include m.respond-to('us') {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__description {
+    margin-bottom: 57px;
+    color: $color-secondary;
+
+    @include m.respond-to('md'){
+      margin-bottom: 40px;
+    }
+
+    @include m.respond-to('us') {
+      margin-bottom: 25px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 225px;
+    min-height: 65px;
+    text-transform: uppercase;
+    padding: 0.5em;
+    letter-spacing: $letter-spacing;
+    background-color: $color-primary;
+    color: $color-white;
+
+    @include m.respond-to('md'){
+      min-width: 200px;
+      min-height: 55px;
+    }
+
+    @include m.respond-to('sm'){
+      min-width: 180px;
+      min-height: 50px;
+      width: 100%;
+    }
+  }
 }

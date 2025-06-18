@@ -1,4 +1,5 @@
 @use '../abstracts/skin' as *;
+@use '../abstracts/mixins' as m;
 
 .footer {
   padding-top: 50px;
@@ -6,6 +7,11 @@
   display: flex;
   background-color: $color-primary;
   color: $color-white;
+
+  @include m.respond-to('md'){
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 .footer__title {
@@ -17,4 +23,8 @@
 .footer__description {
   font-size: 0.8125rem;
   margin-bottom: 57px;
+
+  @include m.respond-to('sm'){
+    margin-bottom: 30px;
+  }
 }

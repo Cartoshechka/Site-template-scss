@@ -1,25 +1,57 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/skin' as *;
+@use '../abstracts/mixins' as m;
 
 .navbar {
   margin-bottom: 141px;
-}
 
-.navbar__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 27px;
-  margin-left: -0.75em;
-}
+  @include m.respond-to('lg'){
+    margin-bottom: 80px;
+  }
 
-.navbar__link {
-  display: block;
-  letter-spacing: $letter-spacing;
-  padding: 0.5em 0.75em;
-  text-transform: uppercase;
-}
+  @include m.respond-to('md'){
+    margin-bottom: 60px;
+  }
 
-.navbar__link--active {
-  color: $color-primary;
-  font-weight: 500;
+  @include m.respond-to('us') {
+    margin-bottom: 35px;
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 27px;
+    margin-left: -0.75em;
+
+    @include m.respond-to('lg'){
+      justify-content: center;
+      gap: $gap;
+    }
+
+    @include m.respond-to('md'){
+      gap: 15px $gap;
+    }
+
+    @include m.respond-to('sm'){
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+
+  &__link {
+    display: block;
+    letter-spacing: $letter-spacing;
+    padding: 0.5em 0.75em;
+    text-transform: uppercase;
+
+    @include m.respond-to('md'){
+      padding: 0.35em 0.5em;
+    }
+  }
+
+  &__link--active {
+    color: $color-primary;
+    font-weight: 500;
+  }
 }

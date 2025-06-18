@@ -6,7 +6,20 @@
   background-color: $color-gray-light;
   padding-top: 69px;
   padding-bottom: 140px;
+
   @include m.respond-to('lg'){
-    padding: 30px 0;
+    padding-top: 40px;
+    padding-bottom: 80px;
   }
+
+  @include m.respond-to('md'){
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+
+  @include m.respond-to('us') {
+    padding-top: 18px;
+    padding-bottom: 35px;
+  }
+
 }
