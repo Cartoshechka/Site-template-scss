@@ -4,8 +4,11 @@
 
 $ul: 1380px; // Ultra large (very large screens)
 $xl: 1200px; // Extra large (large screens)
+$lg-plus: 1000px; // Large plus (между xl и lg)
 $lg: 992px; // Large (medium screens)
+$md-plus: 900px; // Medium plus (между lg и md)
 $md: 768px;  // Medium (tablets)
+$sm-plus: 640px; // Small plus (между md и sm)
 $sm: 576px; // Small (mobile devices)
 $xs: 480px; // Extra small (small mobile devices)
 $vs: 420px; // Very small (very small devices)
@@ -25,6 +28,7 @@ $container-secondary: 540px;
 $container-sm-md: 480px;
 
 $gap: 20px;
-$gap-sm: calc(var(--gap) * 0.5);
-$gap-lg: calc(var(--gap) * 1.5);
-$gap-xl: calc(var(--gap) * 2);
+$gap-xs: $gap * 0.25; //5px
+$gap-sm: $gap * 0.5; //10px
+$gap-lg: $gap * 1.5; //30px
+$gap-xl: $gap * 2;  //40px

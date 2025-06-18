@@ -1,6 +1,7 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/skin' as *;
 @use '../abstracts/mixins' as m;
+@use 'sass:math';
 
 .experience {
   padding-top: 100px;
@@ -8,74 +9,223 @@
   background-color: $color-primary;
   color: $color-white;
 
-  @include m.respond-to('lg'){
+  @include m.respond-to('lg') {
     padding-top: 80px;
     padding-bottom: 80px;
   }
 
-  @include m.respond-to('md'){
+  @include m.respond-to('md') {
     padding-top: 60px;
     padding-bottom: 60px;
   }
 
-  @include m.respond-to('sm'){
+  @include m.respond-to('sm') {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+
+  @include m.respond-to('us') {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 
   &__container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: $gap-xl;
+    justify-content: center;
+    gap: $gap-lg;
 
-    @include m.respond-to('md'){
-      gap: $gap-lg;
+    @include m.respond-to('xl') {
+      gap: $gap-lg $gap;
     }
 
-    @include m.respond-to('sm'){
+    @include m.respond-to('md') {
       gap: $gap;
     }
 
+    @include m.respond-to('sm') {
+      gap: $gap-sm;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item {
     display: flex;
-    gap: $gap;
+    gap: $gap-sm;
     align-items: center;
-    min-width: fit-content;
+    flex-shrink: 1;
+    padding: 0.4rem 0.8rem;
 
-    @include m.respond-to('md'){
-      flex: 0 0 calc(50% - $gap-lg);
+    @include m.respond-to('lg-plus') {
+      padding: 0.4rem 0.6rem;
     }
 
-    @include m.respond-to('sm'){
-      flex: 0 0 100%;
+    @include m.respond-to('md-plus') {
+      flex: 0 0 calc(50% - #{math.div($gap-lg, 2)});
+      padding: 0.3rem 0.5rem;
+    }
+
+    @include m.respond-to('md') {
+      flex: 0 0 calc(50% - #{math.div($gap, 2)});
+      padding: 0.3rem 0.4rem;
+    }
+
+    @include m.respond-to('sm-plus') {
+      flex: 0 0 calc(50% - #{math.div($gap-sm, 2)});
+      padding: 0.25rem 0.3rem;
+    }
+
+    @include m.respond-to('sm') {
       justify-content: center;
+      gap: $gap-sm;
+      padding: 0.4rem 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @include m.respond-to('xs') {
+      gap: $gap-xs;
+      padding: 0.3rem 0.4rem;
+      margin-bottom: 0.3rem;
     }
 
     @include m.respond-to('us') {
-      gap: $gap-sm;
+      padding: 0.2rem 0.3rem;
+      margin-bottom: 0.2rem;
     }
   }
 
   &__picture {
     order: -1;
+    flex-shrink: 0;
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+
+    @include m.respond-to('xl') {
+      max-width: 90px;
+    }
+
+    @include m.respond-to('lg-plus') {
+      max-width: 85px;
+    }
+
+    @include m.respond-to('md-plus') {
+      max-width: 80px;
+    }
+
+    @include m.respond-to('md') {
+      max-width: 70px;
+    }
+
+    @include m.respond-to('sm-plus') {
+      max-width: 60px;
+    }
+
+    @include m.respond-to('sm') {
+      max-width: 50px;
+    }
+
+    @include m.respond-to('xs') {
+      max-width: 45px;
+    }
+
+    @include m.respond-to('us') {
+      max-width: 40px;
+    }
   }
 
   &__image {
     display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 
   &__description {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: flex-start;
     line-height: 1;
+    font-size: 1rem;
+    white-space: nowrap;
+
+    @include m.respond-to('xl') {
+      font-size: 0.98rem;
+    }
+
+    @include m.respond-to('lg-plus') {
+      font-size: 0.95rem;
+    }
+
+    @include m.respond-to('md-plus') {
+      font-size: 0.92rem;
+    }
+
+    @include m.respond-to('md') {
+      font-size: 0.9rem;
+    }
+
+    @include m.respond-to('sm-plus') {
+      font-size: 0.88rem;
+    }
+
+    @include m.respond-to('sm') {
+      font-size: 0.85rem;
+      align-items: center;
+    }
+
+    @include m.respond-to('xs') {
+      font-size: 0.82rem;
+    }
+
+    @include m.respond-to('us') {
+      font-size: 0.8rem;
+    }
   }
 
   &__number {
     font-size: 1.3125rem;
     font-weight: 500;
+    margin-bottom: 0.1em;
+
+    @include m.respond-to('xl') {
+      font-size: 1.25rem;
+    }
+
+    @include m.respond-to('lg-plus') {
+      font-size: 1.2rem;
+    }
+
+    @include m.respond-to('md-plus') {
+      font-size: 1.15rem;
+    }
+
+    @include m.respond-to('md') {
+      font-size: 1.1rem;
+    }
+
+    @include m.respond-to('sm-plus') {
+      font-size: 1.05rem;
+    }
+
+    @include m.respond-to('sm') {
+      font-size: 1rem;
+    }
+
+    @include m.respond-to('xs') {
+      font-size: 0.98rem;
+    }
+
+    @include m.respond-to('us') {
+      font-size: 0.95rem;
+    }
+  }
+
+  &__label {
+    font-size: 0.9em;
+    opacity: 0.9;
+    white-space: nowrap;
   }
 }

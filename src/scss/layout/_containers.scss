@@ -1,6 +1,7 @@
 @use '../abstracts/variables' as *;
 @use '../abstracts/mixins' as m;
 .container {
+  box-sizing: border-box;
   width: 100%;
   max-width: $container-primary;
   margin-inline: auto;
@@ -15,11 +16,12 @@
   }
 
   @include m.respond-to('sm') {
-    padding-inline: $gap;
+    width: calc(100% - 2 * #{$gap-lg});
+    padding-inline: $gap-xs;
   }
 
   @include m.respond-to('us') {
-    padding-inline: $gap-sm;
+    padding-inline: $gap-xs;
   }
 }
 
@@ -38,10 +40,11 @@
   }
 
   @include m.respond-to('sm') {
-    padding-inline: $gap;
+    width: calc(100% - 2 * #{$gap-lg});
+    padding-inline: $gap-xs;
   }
 
   @include m.respond-to('us') {
-    padding-inline: $gap-sm;
+    padding-inline: $gap-xs;
   }
 }
