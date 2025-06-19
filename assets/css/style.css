@@ -262,7 +262,6 @@ img{
 }
 .section__description{
   color:#727272;
-  margin-bottom:57px;
 }
 
 .experience{
@@ -277,39 +276,30 @@ img{
   display:flex;
   -ms-flex-wrap:wrap;
       flex-wrap:wrap;
-  -webkit-box-pack:center;
-      -ms-flex-pack:center;
-          justify-content:center;
-  gap:30px;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
+  gap:40px;
 }
 .experience__item{
   display:-webkit-box;
   display:-ms-flexbox;
   display:flex;
-  gap:10px;
+  gap:20px;
   -webkit-box-align:center;
       -ms-flex-align:center;
           align-items:center;
-  -ms-flex-negative:1;
-      flex-shrink:1;
-  padding:0.4rem 0.8rem;
+  min-width:-webkit-fit-content;
+  min-width:-moz-fit-content;
+  min-width:fit-content;
 }
 .experience__picture{
   -webkit-box-ordinal-group:0;
       -ms-flex-order:-1;
           order:-1;
-  -ms-flex-negative:0;
-      flex-shrink:0;
-  max-width:100px;
-  width:100%;
-  height:auto;
 }
 .experience__image{
   display:block;
-  width:100%;
-  height:auto;
-  -o-object-fit:contain;
-     object-fit:contain;
 }
 .experience__description{
   display:-webkit-box;
@@ -319,25 +309,14 @@ img{
   -webkit-box-direction:normal;
       -ms-flex-direction:column;
           flex-direction:column;
-  -webkit-box-pack:center;
-      -ms-flex-pack:center;
-          justify-content:center;
-  -webkit-box-align:start;
-      -ms-flex-align:start;
-          align-items:flex-start;
+  -webkit-box-pack:justify;
+      -ms-flex-pack:justify;
+          justify-content:space-between;
   line-height:1;
-  font-size:1rem;
-  white-space:nowrap;
 }
 .experience__number{
   font-size:1.3125rem;
   font-weight:500;
-  margin-bottom:0.1em;
-}
-.experience__label{
-  font-size:0.9em;
-  opacity:0.9;
-  white-space:nowrap;
 }
 
 .process{
@@ -423,35 +402,16 @@ img{
   max-width:540px;
   margin-inline:auto;
   padding-inline:40px;
+  -webkit-box-sizing:border-box;
+          box-sizing:border-box;
 }
 
 @media (max-width: 1200px){
   .experience__container{
-    gap:30px 20px;
-  }
-  .experience__picture{
-    max-width:90px;
-  }
-  .experience__description{
-    font-size:0.98rem;
-  }
-  .experience__number{
-    font-size:1.25rem;
-  }
-}
-
-@media (max-width: 1000px){
-  .experience__item{
-    padding:0.4rem 0.6rem;
-  }
-  .experience__picture{
-    max-width:85px;
-  }
-  .experience__description{
-    font-size:0.95rem;
-  }
-  .experience__number{
-    font-size:1.2rem;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    gap:40px 30px;
   }
 }
 
@@ -475,8 +435,11 @@ img{
     padding-bottom:60px;
   }
   .experience{
-    padding-top:80px;
-    padding-bottom:80px;
+    padding-top:60px;
+    padding-bottom:60px;
+  }
+  .experience__container{
+    gap:30px;
   }
   .header{
     padding-top:40px;
@@ -496,24 +459,6 @@ img{
   }
   .container-sm{
     padding-inline:30px;
-  }
-}
-
-@media (max-width: 900px){
-  .experience__item{
-    -webkit-box-flex:0;
-        -ms-flex:0 0 calc(50% - 15px);
-            flex:0 0 calc(50% - 15px);
-    padding:0.3rem 0.5rem;
-  }
-  .experience__picture{
-    max-width:80px;
-  }
-  .experience__description{
-    font-size:0.92rem;
-  }
-  .experience__number{
-    font-size:1.15rem;
   }
 }
 
@@ -537,27 +482,10 @@ img{
     padding-top:50px;
     padding-bottom:50px;
   }
-  .experience{
-    padding-top:60px;
-    padding-bottom:60px;
-  }
-  .experience__container{
-    gap:20px;
-  }
   .experience__item{
     -webkit-box-flex:0;
-        -ms-flex:0 0 calc(50% - 10px);
-            flex:0 0 calc(50% - 10px);
-    padding:0.3rem 0.4rem;
-  }
-  .experience__picture{
-    max-width:70px;
-  }
-  .experience__description{
-    font-size:0.9rem;
-  }
-  .experience__number{
-    font-size:1.1rem;
+        -ms-flex:0 0 calc(50% - 30px);
+            flex:0 0 calc(50% - 30px);
   }
   .footer{
     padding-top:30px;
@@ -581,24 +509,6 @@ img{
   }
   .container-sm{
     padding-inline:20px;
-  }
-}
-
-@media (max-width: 640px){
-  .experience__item{
-    -webkit-box-flex:0;
-        -ms-flex:0 0 calc(50% - 5px);
-            flex:0 0 calc(50% - 5px);
-    padding:0.25rem 0.3rem;
-  }
-  .experience__picture{
-    max-width:60px;
-  }
-  .experience__description{
-    font-size:0.88rem;
-  }
-  .experience__number{
-    font-size:1.05rem;
   }
 }
 
@@ -626,39 +536,16 @@ img{
     width:100%;
     padding-inline:1em;
   }
-  .experience{
-    padding-top:50px;
-    padding-bottom:50px;
-  }
   .experience__container{
-    gap:10px;
-    -webkit-box-orient:vertical;
-    -webkit-box-direction:normal;
-        -ms-flex-direction:column;
-            flex-direction:column;
-    -webkit-box-align:center;
-        -ms-flex-align:center;
-            align-items:center;
+    gap:20px;
   }
   .experience__item{
+    -webkit-box-flex:0;
+        -ms-flex:0 0 100%;
+            flex:0 0 100%;
     -webkit-box-pack:center;
         -ms-flex-pack:center;
             justify-content:center;
-    gap:10px;
-    padding:0.4rem 0.6rem;
-    margin-bottom:0.5rem;
-  }
-  .experience__picture{
-    max-width:50px;
-  }
-  .experience__description{
-    font-size:0.85rem;
-    -webkit-box-align:center;
-        -ms-flex-align:center;
-            align-items:center;
-  }
-  .experience__number{
-    font-size:1rem;
   }
   .footer__description{
     margin-bottom:30px;
@@ -683,24 +570,7 @@ img{
   }
 }
 
-@media (max-width: 480px){
-  .experience__item{
-    gap:5px;
-    padding:0.3rem 0.4rem;
-    margin-bottom:0.3rem;
-  }
-  .experience__picture{
-    max-width:45px;
-  }
-  .experience__description{
-    font-size:0.82rem;
-  }
-  .experience__number{
-    font-size:0.98rem;
-  }
-}
-
-@media (max-width: 360px){
+@media (max-width: 375px){
   .hero__title{
     margin-bottom:18px;
     font-size:1.3rem;
@@ -723,17 +593,7 @@ img{
     padding-bottom:40px;
   }
   .experience__item{
-    padding:0.2rem 0.3rem;
-    margin-bottom:0.2rem;
-  }
-  .experience__picture{
-    max-width:40px;
-  }
-  .experience__description{
-    font-size:0.8rem;
-  }
-  .experience__number{
-    font-size:0.95rem;
+    gap:10px;
   }
   .header{
     padding-top:18px;
